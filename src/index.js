@@ -24,10 +24,17 @@ app.get("/health", async (req, res) => {
   }
 });
 
+// app.use(cors({
+//   origin: [
+//     "http://localhost:5173",
+//     "https://api-monitor-frontend-final.vercel.app/" // ← paste your vercel URL here
+//   ]
+// }));
+
 app.use(cors({
   origin: [
-   
-    "https://api-monitor-frontend-final.vercel.app/" // ← paste your vercel URL here
+    "http://localhost:5173",
+    "https://api-monitor-frontend-final.vercel.app" // ✅ no slash
   ]
 }));
 
