@@ -34,7 +34,7 @@ app.get("/health", async (req, res) => {
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://api-monitor-frontend-final.vercel.app" // ✅ no slash
+    "api-monitor-frontend-final1.vercel.app" // ✅ no slash
   ]
 }));
 
