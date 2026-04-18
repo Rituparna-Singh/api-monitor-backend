@@ -33,8 +33,8 @@ app.get("/health", async (req, res) => {
 
 app.use(cors({
   origin: [
-    "https://localhost:5173",
-    "api-monitor-frontend-final.vercel.app" 
+    "http://localhost:5173",
+    "https://api-monitor-frontend-final.vercel.app" 
   ]
 }));
 
