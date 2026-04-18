@@ -9,7 +9,7 @@ const monitorRoutes = require("./routes/monitors");
 const { startMonitorJob } = require("./jobs/monitor.job"); // ← add this
 
 const app = express();
-app.use(cors());
+
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
@@ -24,7 +24,15 @@ app.get("/health", async (req, res) => {
   }
 });
 
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://api-monitor-frontend-three.vercel.app/" // ← paste your vercel URL here
+  ]
+}));
+
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);
+
   startMonitorJob(); // ← start cron job after server starts
 });
